@@ -16,11 +16,11 @@
 
 */
 import Dashboard from "views/Dashboard.js";
-import Icons from "views/Icons.js";
-import Notifications from "views/Notifications.js";
-import TableList from "views/TableList.js";
-import Typography from "views/Typography.js";
-import UserProfile from "views/UserProfile.js";
+// import Icons from "views/Icons.js";
+// import Notifications from "views/Notifications.js";
+// import TableList from "views/TableList.js";
+// import Typography from "views/Typography.js";
+// import UserProfile from "views/UserProfile.js";
 
 var routes = [
   {
@@ -31,14 +31,14 @@ var routes = [
     component: <Dashboard />,
     layout: "/admin",
   },
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: "tim-icons icon-atom",
-    component: <Icons />,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/icons",
+  //   name: "Icons",
+  //   rtlName: "الرموز",
+  //   icon: "tim-icons icon-atom",
+  //   component: <Icons />,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/notifications",
   //   name: "Notifications",
