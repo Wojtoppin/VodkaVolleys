@@ -39,7 +39,6 @@ import {
   chartExample1,
   chartExample3,
 } from "variables/charts.js";
-import { element } from 'prop-types';
 
 function Dashboard(props) {
   const [bigChartData, setbigChartData] = React.useState("Strzelone");
@@ -108,7 +107,26 @@ function Dashboard(props) {
   }, []);
 
 
+  useEffect(() => {
+    const handleScroll = (event) => {
+      event.preventDefault();
 
+      const scrollSpeed = 1; // Adjust this value as needed
+      const delta = Math.sign(event.deltaY);
+
+      window.scrollBy({
+        top: delta * scrollSpeed,
+        left: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    window.addEventListener('wheel', handleScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, []);
 
 
 

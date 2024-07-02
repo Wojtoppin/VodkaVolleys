@@ -16,9 +16,9 @@
 
 */
 import Dashboard from "views/Dashboard.js";
-// import Icons from "views/Icons.js";
+import Icons from "views/Icons.js";
 // import Notifications from "views/Notifications.js";
-// import TableList from "views/TableList.js";
+import TableList from "views/TableList.js";
 // import Typography from "views/Typography.js";
 // import UserProfile from "views/UserProfile.js";
 
@@ -55,14 +55,14 @@ var routes = [
   //   component: <UserProfile />,
   //   layout: "/admin",
   // },
-  // {
-  //   path: "/tables",
-  //   name: "Table List",
-  //   rtlName: "قائمة الجدول",
-  //   icon: "tim-icons icon-puzzle-10",
-  //   component: <TableList />,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/tables",
+    name: "Główna tabela",
+    rtlName: "قائمة الجدول",
+    icon: "tim-icons icon-puzzle-10",
+    component: <TableList />,
+    layout: "/admin",
+  },
   // {
   //   path: "/typography",
   //   name: "Typography",
