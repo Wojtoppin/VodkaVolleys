@@ -16,12 +16,15 @@
 
 */
 import React, {useState, useEffect} from "react";
+import { SocialIcon } from 'react-social-icons/component'
+import 'react-social-icons/instagram';
 import Adam from "assets/img/adam.jpg";
 import Antek from "assets/img/antek.jpg";
 import Wiktor from "assets/img/witek.jpg";
 import Bartek from "assets/img/gonera.jpg";
 import Hubert from "assets/img/hubert.jpg";
 import Marek from "assets/img/maro.jpg";
+import Wojtek from "assets/img/wojtop.jpg";
 import Jakub from "assets/img/pawlak.jpg";
 import VVLogo from "assets/img/VVlogo.png";
 import ProgressCircle from './ProgressCircle';
@@ -44,6 +47,24 @@ const Players = () =>  {
   const [mostGoals, setMostGoals] = useState(0)
   const [currentlyClickedProfile, setCurrentlyClickedProfile] = useState(0);
   
+  let hardcodedPlayers = [
+    {ig: "https://www.instagram.com/hubi_kozlowski/", image: Hubert, goals: 0, playerName: 'Hubert', playerSurName: 'KOZ£OWSKI'},
+    {ig: "https://www.instagram.com/bartix35/", image: Bartek, goals: 0, playerName: 'Bart³omiej', playerSurName: 'GONERA'},
+    {ig: "https://www.instagram.com/xgozdzik/", image: VVLogo, goals: 0, playerName: 'Pawe³', playerSurName: 'GO¬DZIKOWSKI'},
+    {ig: "https://www.instagram.com/_domingway_/", image: VVLogo, goals: 0, playerName: 'Dominik', playerSurName: 'MAZUR'},
+    {ig: "https://www.instagram.com/adampachuta/", image: Adam, goals: 0, playerName: 'Adam', playerSurName: 'PACHUTA'},
+    {ig: "https://www.instagram.com/_kubapawlak_/", image: Jakub, goals: 0, playerName: 'Jakub', playerSurName: 'PAWLAK'},
+    {ig: "https://www.instagram.com/marekpolit/", image: Marek, goals: 0, playerName: 'Marek', playerSurName: 'POLIT'},
+    {ig: "https://www.instagram.com/wojtop_/", image: Wojtek, goals: 0, playerName: 'Wojciech', playerSurName: 'POLIT'},
+    {ig: "https://www.instagram.com/antoni_radko/", image: Antek, goals: 0, playerName: 'Antoni', playerSurName: 'RADKO'},
+    {ig: "https://www.instagram.com/wiktorswierczynski/", image: Wiktor, goals: 0, playerName: 'Wiktor', playerSurName: '¦WIERCZYÑSKI'},
+  ]
+
+
+
+
+
+
   useEffect(() => {
     fetch('http://localhost:3001/scrape/Scorers/VV')
       .then(response => {
@@ -53,15 +74,17 @@ const Players = () =>  {
         return response.json();
       })
       .then(data => {
+        console.log(data)
         setMostGoals(data[0].goals)
-        console.log(data[0].goals)
-        const sortedPlayers = data.sort((playerA, playerB) => {
-          return playerA.playerSurName.toLowerCase() 
-                 .localeCompare(playerB.playerSurName.toLowerCase());
-        });
+        
+        data.map((player) => {
+          hardcodedPlayers.map((hardcodedPlayer) => {
+            if(player.playerName === hardcodedPlayer.playerName && player.playerSurName === hardcodedPlayer.playerSurName){
+              hardcodedPlayer.goals = player.goals
+            }})})
         
         
-        setPlayers(sortedPlayers);
+        setPlayers(hardcodedPlayers);
       })
       .catch(error => {
         console.log(error);
@@ -108,7 +131,7 @@ const Players = () =>  {
                       </tr>:currentlyClickedProfile===index+1 &&
                         
                         <tr style={{height:"60vh"}} onClick={() => handleRowClick(index+1) }>
-                          <div id="imageDiv"><img src={Wiktor}/></div>
+                          <div id="imageDiv"><img alt="chuj" src={player.image} style={{width:"300px", height:"300px"}}/></div>
                           <div id="NameSurnameDiv">
                             <h2>{player.playerName + " " + player.playerSurName}</h2>
                             <h5>{"Strzelone bramki: " + player.goals}</h5>
@@ -116,7 +139,7 @@ const Players = () =>  {
                           <ProgressCircle progress={Math.round((player.goals/mostGoals)*100)} />
                           <div id="socialMediaDiv">
                             <h4>Social media</h4>
-                            <h5>Instagram: </h5>
+                            <SocialIcon network="instagram" target="_blank" url={player.ig}/>
                           </div>
                         </tr>
                     }

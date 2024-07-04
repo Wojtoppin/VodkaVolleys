@@ -7,10 +7,12 @@
 } */
 #imageDiv{
     float: left;
+    padding-right: 30px;
+
 }
 #NameSurnameDiv{
     float: left;
-    padding-left: 30px;
+    padding-right: 30px;
 }
 #socialMediaDiv{
     clear: both;

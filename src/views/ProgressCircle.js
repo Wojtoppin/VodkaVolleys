@@ -26,16 +26,17 @@ const ProgressCircle = ({ progress }) => {
   };
 
   return (
-    <div style={{position: 'relative', width: '150px', height: '150px', textAlign:"center", float:'left', marginLeft:"30px"}}>
-      <span style={{fontSize:"80%", color:"#e0e0e0", }}>Stosunek strzelonych goli do innych zawodników</span>
+    <div style={{position: 'relative', width: '300px', height: '300px', textAlign:"center", float:'left'}}>
+      <span style={{fontSize:"100%", color:"#e0e0e0", }}>Stosunek strzelonych goli do innych zawodników</span>
       <Doughnut data={data} options={options} />
       <div
         style={{
           position: 'absolute',
-          top: '150px',
+          top: '180px',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           textAlign: 'center',
+          fontSize:"130%",
         }}
       >
         <span>{`${progress}%`}</span><br/>
