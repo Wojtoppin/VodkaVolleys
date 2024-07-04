@@ -17,16 +17,16 @@
 */
 import Dashboard from "views/Dashboard.js";
 import Icons from "views/Icons.js";
-// import Notifications from "views/Notifications.js";
+import Notifications from "views/Notifications.js";
+import Players from "views/Players";
 import TableList from "views/TableList.js";
-// import Typography from "views/Typography.js";
-// import UserProfile from "views/UserProfile.js";
+import Typography from "views/Typography.js";
+import UserProfile from "views/UserProfile.js";
 
 var routes = [
   {
     path: "/dashboard",
     name: "Statystyki Drużyny",
-    rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: <Dashboard />,
     layout: "/admin",
@@ -34,7 +34,6 @@ var routes = [
   // {
   //   path: "/icons",
   //   name: "Icons",
-  //   rtlName: "الرموز",
   //   icon: "tim-icons icon-atom",
   //   component: <Icons />,
   //   layout: "/admin",
@@ -56,11 +55,17 @@ var routes = [
   //   layout: "/admin",
   // },
   {
-    path: "/tables",
-    name: "Główna tabela",
-    rtlName: "قائمة الجدول",
+    path: "/main_table",
+    name: "tabela strzelców",
     icon: "tim-icons icon-puzzle-10",
     component: <TableList />,
+    layout: "/admin",
+  },
+  {
+    path: "/players",
+    name: "zawodnicy",
+    icon: "tim-icons icon-single-02",
+    component: <Players />,
     layout: "/admin",
   },
   // {

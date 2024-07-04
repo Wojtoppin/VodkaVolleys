@@ -1,0 +1,18 @@
+.imageSize{
+    width: 150px;
+    height: 150px;
+}
+/* .mainTableData{
+    background: #000;
+} */
+#imageDiv{
+    float: left;
+}
+#NameSurnameDiv{
+    float: left;
+    padding-left: 30px;
+}
+#socialMediaDiv{
+    clear: both;
+    padding: 10px;
+}

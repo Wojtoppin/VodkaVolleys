@@ -222,7 +222,7 @@ function Dashboard(props) {
           <Col lg="4">
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Najlepsi Strzelce</h5>
+                <h5 className="card-category">Najlepsi Strzelcy</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-single-02 text-primary" />{" "}
                   {Array.isArray(players) && players.length !== 0 && players[0].playerSurName.toUpperCase() + " " + players[0].playerName.toUpperCase()}
