@@ -66,7 +66,7 @@ function Dashboard(props) {
         return response.json();
       })
       .then(data => {
-
+        console.log(data)
         const newData = data.map((element)=>{
           if (element.team1 !== "VODKA VOLLEYS"){
             element.team2 = element.team1;

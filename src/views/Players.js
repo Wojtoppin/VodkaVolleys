@@ -65,7 +65,9 @@ const Players = () =>  {
 
 
 
+  
   useEffect(() => {
+    
     fetch('https://vodka-volleys-api.onrender.com/scrape/Scorers/VV')
       .then(response => {
         if (!response.ok) {
