@@ -32,7 +32,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
       <BrowserRouter>
         <Routes>
-        <Route path="/VodkaVolleys/:page" element={<AdminLayout />} />
+          <Route path="/VodkaVolleys/*" element={<AdminLayout />} />
           <Route
             path="*"
             element={<Navigate to="/VodkaVolleys/dashboard" replace />}

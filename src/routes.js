@@ -25,7 +25,7 @@ import UserProfile from "views/UserProfile.js";
 
 var routes = [
   {
-    path: "/dashboard",
+    path: "/",
     name: "Statystyki Drużyny",
     icon: "tim-icons icon-chart-pie-36",
     component: <Dashboard />,
@@ -55,14 +55,14 @@ var routes = [
   //   layout: "/admin",
   // },
   {
-    path: "/main_table",
+    path: "/",
     name: "tabela strzelców",
     icon: "tim-icons icon-puzzle-10",
     component: <TableList />,
     layout: "/VodkaVolleys",
   },
   {
-    path: "/players",
+    path: "/",
     name: "zawodnicy",
     icon: "tim-icons icon-single-02",
     component: <Players />,
