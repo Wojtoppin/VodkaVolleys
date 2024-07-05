@@ -317,7 +317,7 @@ function Dashboard(props) {
                             <td>{team.bilans}</td>
                           </tr>
                         )
-                    }):<tr><td className="tdLoader" colSpan={8}><div className="loader"></div></td></tr>}
+                    }):<tr className="tdLoader">ładowanie może potrwać aż do 30 sekund<div className="loader"></div></tr>}
                   </tbody>
                 </Table>
               </CardBody>
