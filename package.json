@@ -1,7 +1,7 @@
 {
   "name": "vodka-volleys-app",
   "version": "1.2.2",
-  "homepage": "https://wojtoppin.github.io/admin/dashboard",
+  "homepage": "https://wojtoppin.github.io/VodkaVolleys",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.4.0",
