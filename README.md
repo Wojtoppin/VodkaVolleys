@@ -2,8 +2,8 @@
 
 This project aims to scrape data for the Vodka Volleys soccer team from the official "Liga Ursus" website ([http://ligaursus.futbolowo.pl/?mobiledetection=0](http://ligaursus.futbolowo.pl/?mobiledetection=0)) and present it in a user-friendly format on the Vodka Volleys website.
 
-
-[Video](https://youtu.be/Fk-OZ0l4mvo)
+[![Alt text](https://img.youtube.com/vi/Fk-OZ0l4mvo/maxresdefault.jpg)](https://youtu.be/Fk-OZ0l4mvo)
+[Video]()
 
 ### Technologies Used
 
