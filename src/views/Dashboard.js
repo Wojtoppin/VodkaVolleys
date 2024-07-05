@@ -285,7 +285,7 @@ function Dashboard(props) {
           <Col lg="12" md="12">
             <Card >
               <CardHeader>
-                <CardTitle tag="h4">Wszystkie Drużyny</CardTitle>
+                <CardTitle tag="h4">Tabela ligowa</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table className="tablesorter">
@@ -302,9 +302,9 @@ function Dashboard(props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.isArray(teams) && teams.length !== 0 && teams.map((team)=>{
+                    {Array.isArray(teams) && teams.length !== 0 && teams.map((team, i)=>{
                         return(
-                          <tr>
+                          <tr style={{background:((i+1)<=2)?"rgba(0,148,0,1)":((i+1)<=8)?"#27293d":"rgba(148,0,0,1)"}}>
                             <td>{team.playerName}</td>
                             <td>{team.points}</td>
                             <td>{team.matchesWon}</td>
