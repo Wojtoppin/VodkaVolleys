@@ -79,7 +79,7 @@ function Admin(props) {
   };
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/VodkaVolleys") {
         return (
           <Route path={prop.path} element={prop.component} key={key} exact />
         );
@@ -104,7 +104,7 @@ function Admin(props) {
             <Sidebar
               routes={routes}
               logo={{
-                outterLink: "http://localhost:3000/admin/dashboard",
+                outterLink: "http://localhost:3000/VodkaVolleys/dashboard",
                 text: "Vodka Volleys",
                 imgSrc: logo,
               }}
@@ -120,7 +120,7 @@ function Admin(props) {
                 {getRoutes(routes)}
                 <Route
                   path="/"
-                  element={<Navigate to="/admin/dashboard" replace />}
+                  element={<Navigate to="/VodkaVolleys/dashboard" replace />}
                 />
               </Routes>
               {
