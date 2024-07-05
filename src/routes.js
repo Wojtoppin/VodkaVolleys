@@ -25,11 +25,11 @@ import UserProfile from "views/UserProfile.js";
 
 var routes = [
   {
-    path: "/VodkaVolleys/main_table",
+    path: "/dashboard",
     name: "Statystyki Drużyny",
     icon: "tim-icons icon-chart-pie-36",
     component: <Dashboard />,
-    layout: "/VodkaVolleys/admin",
+    layout: "/admin",
   },
   // {
   //   path: "/icons",
@@ -55,18 +55,18 @@ var routes = [
   //   layout: "/admin",
   // },
   {
-    path: "/VodkaVolleys/main_table",
+    path: "/main_table",
     name: "tabela strzelców",
     icon: "tim-icons icon-puzzle-10",
     component: <TableList />,
-    layout: "/VodkaVolleys/admin",
+    layout: "/admin",
   },
   {
-    path: "/VodkaVolleys/main_table",
+    path: "/players",
     name: "zawodnicy",
     icon: "tim-icons icon-single-02",
     component: <Players />,
-    layout: "/VodkaVolleys/admin",
+    layout: "/admin",
   },
   // {
   //   path: "/typography",
