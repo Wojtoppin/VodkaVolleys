@@ -79,7 +79,7 @@ function Admin(props) {
   };
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/VodkaVolleys/admin") {
+      if (prop.layout === "/VodkaVolleys") {
         return (
           <Route path={prop.path} element={prop.component} key={key} exact />
         );
