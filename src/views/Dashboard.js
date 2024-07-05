@@ -58,7 +58,7 @@ function Dashboard(props) {
   const [playerName, setPlayerName] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3001/scrape/Matches')
+    fetch('https://vodka-volleys-api.onrender.com/scrape/Matches')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -86,7 +86,7 @@ function Dashboard(props) {
         console.log(error);
       });
 
-    fetch('http://localhost:3001/scrape/Scorers/VV')
+    fetch('https://vodka-volleys-api.onrender.com/scrape/Scorers/VV')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

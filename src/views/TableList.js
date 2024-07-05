@@ -33,7 +33,7 @@ const Tables = () =>  {
   const [players, setPlayers] = useState([])
   
   useEffect(() => {
-    fetch('http://localhost:3001/scrape/Scorers')
+    fetch('https://vodka-volleys-api.onrender.com/scrape/Scorers')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

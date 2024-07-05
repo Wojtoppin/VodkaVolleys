@@ -66,7 +66,7 @@ const Players = () =>  {
 
 
   useEffect(() => {
-    fetch('http://localhost:3001/scrape/Scorers/VV')
+    fetch('https://vodka-volleys-api.onrender.com/scrape/Scorers/VV')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
