@@ -48,16 +48,16 @@ const Players = () =>  {
   const [currentlyClickedProfile, setCurrentlyClickedProfile] = useState(0);
   
   let hardcodedPlayers = [
-    {ig: "https://www.instagram.com/hubi_kozlowski/", image: Hubert, goals: 0, playerName: 'Hubert', playerSurName: 'KOZ£OWSKI'},
-    {ig: "https://www.instagram.com/bartix35/", image: Bartek, goals: 0, playerName: 'Bart³omiej', playerSurName: 'GONERA'},
-    {ig: "https://www.instagram.com/xgozdzik/", image: VVLogo, goals: 0, playerName: 'Pawe³', playerSurName: 'GO¬DZIKOWSKI'},
+    {ig: "https://www.instagram.com/hubi_kozlowski/", image: Hubert, goals: 0, playerName: 'Hubert', playerSurName: 'KOZŁOWSKI'},
+    {ig: "https://www.instagram.com/bartix35/", image: Bartek, goals: 0, playerName: 'Bartłomiej', playerSurName: 'GONERA'},
+    {ig: "https://www.instagram.com/xgozdzik/", image: VVLogo, goals: 0, playerName: 'Paweł', playerSurName: 'GOŹDZIKOWSKI'},
     {ig: "https://www.instagram.com/_domingway_/", image: VVLogo, goals: 0, playerName: 'Dominik', playerSurName: 'MAZUR'},
     {ig: "https://www.instagram.com/adampachuta/", image: Adam, goals: 0, playerName: 'Adam', playerSurName: 'PACHUTA'},
     {ig: "https://www.instagram.com/_kubapawlak_/", image: Jakub, goals: 0, playerName: 'Jakub', playerSurName: 'PAWLAK'},
     {ig: "https://www.instagram.com/marekpolit/", image: Marek, goals: 0, playerName: 'Marek', playerSurName: 'POLIT'},
     {ig: "https://www.instagram.com/wojtop_/", image: Wojtek, goals: 0, playerName: 'Wojciech', playerSurName: 'POLIT'},
     {ig: "https://www.instagram.com/antoni_radko/", image: Antek, goals: 0, playerName: 'Antoni', playerSurName: 'RADKO'},
-    {ig: "https://www.instagram.com/wiktorswierczynski/", image: Wiktor, goals: 0, playerName: 'Wiktor', playerSurName: '¦WIERCZYÑSKI'},
+    {ig: "https://www.instagram.com/wiktorswierczynski/", image: Wiktor, goals: 0, playerName: 'Wiktor', playerSurName: 'ŚWIERCZYŃSKI'},
   ]
 
 
