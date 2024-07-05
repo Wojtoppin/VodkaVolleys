@@ -31,13 +31,13 @@ var routes = [
     component: <Dashboard />,
     layout: "/VodkaVolleys",
   },
-  // {
-  //   path: "/icons",
-  //   name: "Icons",
-  //   icon: "tim-icons icon-atom",
-  //   component: <Icons />,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/icons",
+    name: "Icons",
+    icon: "tim-icons icon-atom",
+    component: <Icons />,
+    layout: "/VodkaVolleys",
+  },
   // {
   //   path: "/notifications",
   //   name: "Notifications",

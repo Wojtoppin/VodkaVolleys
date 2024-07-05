@@ -73,7 +73,8 @@ let chart1_2_options = {
 
 
 let chartExample1 = (Labels, Data1, Data2, Data3) => {
-  return {Strzelone: (canvas) => {
+  return {
+    Strzelone: (canvas) => {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -153,6 +154,82 @@ let chartExample1 = (Labels, Data1, Data2, Data3) => {
           label: "Bilans",
           fill: true,
           backgroundColor: gradientStroke,
+          borderColor: "#1f8ef1",
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: "#1f8ef1",
+          pointBorderColor: "rgba(255,255,255,0)",
+          pointHoverBackgroundColor: "#1f8ef1",
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: Data3,
+        },
+      ],
+    };
+  },
+  Wszystkie: (canvas) => {
+    let ctx = canvas.getContext("2d");
+
+    let gradientStrokeRed = ctx.createLinearGradient(0, 230, 0, 50);
+      gradientStrokeRed.addColorStop(1, "rgba(248,29,29,0.2)");
+      gradientStrokeRed.addColorStop(0.4, "rgba(248,29,29,0.0)");
+      gradientStrokeRed.addColorStop(0, "rgba(248,29,29,0)"); 
+    
+    
+    let gradientStrokeGreen = ctx.createLinearGradient(0, 230, 0, 50);
+      gradientStrokeGreen.addColorStop(1, "rgba(29,248,29,0.2)");
+      gradientStrokeGreen.addColorStop(0.4, "rgba(29,248,29,0.0)");
+      gradientStrokeGreen.addColorStop(0, "rgba(29,248,29,0)");
+    
+    let gradientStrokeBlue = ctx.createLinearGradient(0, 230, 0, 50);
+      gradientStrokeBlue.addColorStop(1, "rgba(29,140,248,0.2)");
+      gradientStrokeBlue.addColorStop(0.4, "rgba(29,140,248,0.0)");
+      gradientStrokeBlue.addColorStop(0, "rgba(29,140,248,0)");
+
+    return {
+      labels: Labels,
+      datasets: [
+        {
+          label: "Strzelone bramki",
+          fill: true,
+          backgroundColor: gradientStrokeGreen,
+          borderColor: "#1df81d",
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: "#1df81d",
+          pointBorderColor: "rgba(255,255,255,0)",
+          pointHoverBackgroundColor: "#1df81d",
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: Data1,
+        },
+        {
+          label: "Stracone bramki",
+          fill: true,
+          backgroundColor: gradientStrokeRed,
+          borderColor: "#f81d1d",
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: "#f81d1d",
+          pointBorderColor: "rgba(255,255,255,0)",
+          pointHoverBackgroundColor: "#f81d1d",
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: Data2,
+        },
+        {
+          label: "Bilans",
+          fill: true,
+          backgroundColor: gradientStrokeBlue,
           borderColor: "#1f8ef1",
           borderWidth: 2,
           borderDash: [],

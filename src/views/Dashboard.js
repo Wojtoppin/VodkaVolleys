@@ -39,12 +39,15 @@ import {
   chartExample1,
   chartExample3,
 } from "variables/charts.js";
+import { element } from 'prop-types';
 
 function Dashboard(props) {
-  const [bigChartData, setbigChartData] = React.useState("Strzelone");
+  const [bigChartData, setbigChartData] = React.useState("Wszystkie");
+
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
+
 
   //chart 1
   const [enemyTeams, setEnemyTeams] = useState([]);
@@ -53,9 +56,10 @@ function Dashboard(props) {
   const [balance, setBalance] = useState([]);
 
   //chart 2
-  const [players, setPlayers] = useState([])
+  const [teams, setTeams] = useState([])
   const [playerGoals, setPlayerGoals] = useState([])
   const [playerName, setPlayerName] = useState([])
+  const [topPlayerName, setTopPlayerName] = useState([])
 
   useEffect(() => {
     fetch('https://vodka-volleys-api.onrender.com/scrape/Matches')
@@ -81,6 +85,10 @@ function Dashboard(props) {
         setVVGoals(newData.map((element)=>{return element.VVScore}));
         setEnemyGoals(newData.map((element)=>{return element.enemyTeamScore}));
         setBalance(newData.map((element)=>{return (parseInt(element.VVScore) - parseInt(element.enemyTeamScore))}));
+        // setEnemyTeams(newData.map((element)=>{if(element.enemyTeam !== "NLNA"){return element.enemyTeam}else{return "NLNA"}}));
+        // setVVGoals(newData.map((element)=>{if(element.enemyTeam !== "NLNA"){return element.VVScore}else{return 4}}));
+        // setEnemyGoals(newData.map((element)=>{return element.enemyTeamScore}));
+        // setBalance(newData.map((element)=>{if(element.enemyTeam !== "NLNA"){return (parseInt(element.VVScore) - parseInt(element.enemyTeamScore))}else{return 1}}));
       })
       .catch(error => {
         console.log(error);
@@ -94,14 +102,29 @@ function Dashboard(props) {
         return response.json();
       })
       .then(data => {
-        setPlayers(data);
-        setPlayerName(data.filter((player, i) => i < 6).map(player => player.playerName));
-        setPlayerGoals(data.filter((player, i) => i < 6).map(player => player.goals));
+        setTopPlayerName(data[0])
+        setPlayerName(data.filter((player, i) => i < 5).map(player => player.playerName));
+        setPlayerGoals(data.filter((player, i) => i < 5).map(player => player.goals));
       })
       .catch(error => {
         console.log(error)
       });
-    
+
+
+
+      fetch('https://vodka-volleys-api.onrender.com/scrape/Table')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setTeams(data)
+      })
+      .catch(error => {
+        console.log(error)
+      });
 
 
   }, []);
@@ -154,6 +177,23 @@ function Dashboard(props) {
                       className="btn-group-toggle float-right"
                       data-toggle="buttons"
                     >
+                      <Button
+                        tag="label"
+                        className={classNames("btn-simple", {
+                          active: bigChartData === "data1",
+                        })}
+                        color="info"
+                        id="0"
+                        size="sm"
+                        onClick={() => setBgChartData("Wszystkie")}
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                          Wszystkie wykresy
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-chart-bar-32" />
+                        </span>
+                      </Button>
                       <Button
                         tag="label"
                         className={classNames("btn-simple", {
@@ -225,7 +265,7 @@ function Dashboard(props) {
                 <h5 className="card-category">Najlepsi Strzelcy</h5>
                 <CardTitle tag="h3">
                   <i className="tim-icons icon-single-02 text-primary" />{" "}
-                  {Array.isArray(players) && players.length !== 0 && players[0].playerSurName.toUpperCase() + " " + players[0].playerName.toUpperCase()}
+                  {topPlayerName.length !== 0 && topPlayerName.playerSurName.toUpperCase() + " " + topPlayerName.playerName.toUpperCase()}
                 </CardTitle>
               </CardHeader>
               <CardBody>
@@ -245,24 +285,34 @@ function Dashboard(props) {
           <Col lg="12" md="12">
             <Card >
               <CardHeader>
-                <CardTitle tag="h4">Zawodnicy</CardTitle>
+                <CardTitle tag="h4">Wszystkie Drużyny</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table className="tablesorter">
                   <thead className="text-primary">
                     <tr>
-                      <th>Imię</th>
-                      <th>Nazwisko</th>
-                      <th>bramki</th>
+                      <th>Nazwa Drużyny</th>
+                      <th>pkt</th>
+                      <th>W</th>
+                      <th>R</th>
+                      <th>P</th>
+                      <th>BR +</th>
+                      <th>BR -</th>
+                      <th>bilans</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.isArray(players) && players.length !== 0 && players.map((player)=>{
+                    {Array.isArray(teams) && teams.length !== 0 && teams.map((team)=>{
                         return(
                           <tr>
-                            <td>{player.playerName}</td>
-                            <td>{player.playerSurName}</td>
-                            <td>{player.goals}</td>
+                            <td>{team.playerName}</td>
+                            <td>{team.points}</td>
+                            <td>{team.matchesWon}</td>
+                            <td>{team.matchesDrawn}</td>
+                            <td>{team.matchesLost}</td>
+                            <td>{team.goalScored}</td>
+                            <td>{team.goalLost}</td>
+                            <td>{team.bilans}</td>
                           </tr>
                         )
                     })}
