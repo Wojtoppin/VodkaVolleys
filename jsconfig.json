@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "VodkaVolleys",
+    "baseUrl": "src",
     "paths": {
-      "*": ["VodkaVolleys/*"]
+      "*": ["src/*"]
     }
   }
 }
