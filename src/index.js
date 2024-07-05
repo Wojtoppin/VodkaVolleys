@@ -32,10 +32,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
       <BrowserRouter>
         <Routes>
-          <Route path="/admin/*" element={<AdminLayout />} />
+          <Route path="/VodkaVolleys/admin/*" element={<AdminLayout />} />
           <Route
             path="*"
-            element={<Navigate to="/admin/dashboard" replace />}
+            element={<Navigate to="/VodkaVolleys/admin/dashboard" replace />}
           />
         </Routes>
       </BrowserRouter>
