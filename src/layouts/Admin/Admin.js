@@ -120,7 +120,7 @@ function Admin(props) {
                 {getRoutes(routes)}
                 <Route
                   path="/"
-                  element={<Navigate to="/VodkaVolleys/admin/dashboard" replace />}
+                  element={<Navigate to="/VodkaVolleys/dashboard" replace />}
                 />
               </Routes>
               {
