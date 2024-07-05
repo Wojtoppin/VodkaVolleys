@@ -35,7 +35,7 @@ root.render(
           <Route path="/VodkaVolleys/*" element={<AdminLayout />} />
           <Route
             path="*"
-            element={<Navigate to="/VodkaVolleys/dashboard" replace />}
+            element={<Navigate to="/VodkaVolleys/admin/dashboard" replace />}
           />
         </Routes>
       </BrowserRouter>
