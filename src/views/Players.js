@@ -146,7 +146,7 @@ const Players = () =>  {
                           </div>
                         </tr>
                     }
-                      ):<tr><td colSpan={3} style={{textAlign:"center"}}><div class="loader"></div></td></tr>}
+                      ):<tr><td className="tdLoader" colSpan={3}><div className="loader"></div></td></tr>}
                   </tbody>
                 </Table>
               </CardBody>

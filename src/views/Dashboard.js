@@ -317,7 +317,7 @@ function Dashboard(props) {
                             <td>{team.bilans}</td>
                           </tr>
                         )
-                    }):<tr><td colSpan={8}><div class="loader"></div></td></tr>}
+                    }):<tr><td className="tdLoader" colSpan={8}><div className="loader"></div></td></tr>}
                   </tbody>
                 </Table>
               </CardBody>

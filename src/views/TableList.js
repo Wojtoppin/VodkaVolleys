@@ -104,7 +104,7 @@ const Tables = () =>  {
                         <td>{player.clubName}</td>
                         <td className="text-center">{player.goals}
                           </td>
-                      </tr>}):<tr><td colSpan={4}><div class="loader"></div></td></tr>
+                      </tr>}):<tr><td className="tdLoader" colSpan={4}><div className="loader"></div></td></tr>
                       }
                   </tbody>
                 </Table>
