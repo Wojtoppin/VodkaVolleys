@@ -29,7 +29,7 @@ var routes = [
     name: "Statystyki Drużyny",
     icon: "tim-icons icon-chart-pie-36",
     component: <Dashboard />,
-    layout: "/VodkaVolleys",
+    layout: "/admin",
   },
   // {
   //   path: "/icons",
@@ -59,14 +59,14 @@ var routes = [
     name: "tabela strzelców",
     icon: "tim-icons icon-puzzle-10",
     component: <TableList />,
-    layout: "/VodkaVolleys",
+    layout: "/admin",
   },
   {
     path: "/players",
     name: "zawodnicy",
     icon: "tim-icons icon-single-02",
     component: <Players />,
-    layout: "/VodkaVolleys",
+    layout: "/admin",
   },
   // {
   //   path: "/typography",

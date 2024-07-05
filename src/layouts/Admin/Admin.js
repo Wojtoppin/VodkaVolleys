@@ -79,7 +79,7 @@ function Admin(props) {
   };
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/VodkaVolleys") {
+      if (prop.layout === "/admin") {
         return (
           <Route path={prop.path} element={prop.component} key={key} exact />
         );
@@ -104,7 +104,7 @@ function Admin(props) {
             <Sidebar
               routes={routes}
               logo={{
-                outterLink: "https://wojtoppin.github.io/VodkaVolleys/dashboard",
+                outterLink: "https://wojtoppin.github.io/VodkaVolleys/",
                 text: "Vodka Volleys",
                 imgSrc: logo,
               }}
@@ -120,12 +120,12 @@ function Admin(props) {
                 {getRoutes(routes)}
                 <Route
                   path="/"
-                  element={<Navigate to="/VodkaVolleys/dashboard" replace />}
+                  element={<Navigate to="/admin/dashboard" replace />}
                 />
               </Routes>
               {
                 // we don't want the Footer to be rendered on map page
-                location.pathname === "/VodkaVolleys/maps" ? null : <Footer fluid />
+                location.pathname === "/admin/maps" ? null : <Footer fluid />
               }
             </div>
           </div>
