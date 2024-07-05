@@ -30,6 +30,7 @@ import VVLogo from "assets/img/VVlogo.png";
 import ProgressCircle from './ProgressCircle';
 
 import "../assets/css/Players.css";
+import "../assets/scss/black-dashboard-react/custom/loader.scss";
 // reactstrap components
 import {
   Card,
@@ -125,7 +126,7 @@ const Players = () =>  {
                     </tr>}
                   </thead>
                   <tbody>
-                  {players.length !== 0 && players.map((player, index)=>
+                  {players.length !== 0? players.map((player, index)=>
                       {return currentlyClickedProfile===0?<tr onClick={() => handleRowClick(index+1)}>
                         <td>{player.playerName}</td>
                         <td>{player.playerSurName}</td>
@@ -133,7 +134,7 @@ const Players = () =>  {
                       </tr>:currentlyClickedProfile===index+1 &&
                         
                         <tr style={{height:"60vh"}} onClick={() => handleRowClick(index+1) }>
-                          <div id="imageDiv"><img alt="chuj" src={player.image} style={{width:"300px", height:"300px"}}/></div>
+                          <div id="imageDiv"><img alt="" src={player.image} style={{width:"300px", height:"300px"}}/></div>
                           <div id="NameSurnameDiv">
                             <h2>{player.playerName + " " + player.playerSurName}</h2>
                             <h5>{"Strzelone bramki: " + player.goals}</h5>
@@ -145,7 +146,7 @@ const Players = () =>  {
                           </div>
                         </tr>
                     }
-                      )}
+                      ):<tr><td colSpan={3} style={{textAlign:"center"}}><div class="loader"></div></td></tr>}
                   </tbody>
                 </Table>
               </CardBody>

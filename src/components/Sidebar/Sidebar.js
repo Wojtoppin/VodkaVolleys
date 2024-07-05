@@ -140,7 +140,7 @@ function Sidebar(props) {
                 );
               })}
               <li className="active-pro">
-                <ReactstrapNavLink target="_blank" href="https://github.com/Wojtoppin">
+                <ReactstrapNavLink target="_blank" href="hhttps://github.com/Wojtoppin/VodkaVolleys">
                   <i className="tim-icons icon-badge" />
                   <p>github</p>
                 </ReactstrapNavLink>

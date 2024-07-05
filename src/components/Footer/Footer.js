@@ -33,7 +33,7 @@ function Footer() {
         <div className="copyright"  style={{fontSize:"110%"}}>
           {new Date().getFullYear()} Stronę napisał: 
           <a
-            href="https://https://github.com/Wojtoppin"
+            href="https://github.com/Wojtoppin"
             target="_blank"
           >
             {" "}Wojciech Polit

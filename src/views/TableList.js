@@ -27,6 +27,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import "../assets/scss/black-dashboard-react/custom/loader.scss";
 
 
 const Tables = () =>  {
@@ -94,7 +95,7 @@ const Tables = () =>  {
                     </tr>
                   </thead>
                   <tbody>
-                    {players.length!== 0 && players.map((player)=>
+                    {players.length!== 0 ? players.map((player)=>
                       {return <tr>
                         <td>{player.playerName}</td>
                         <td style={{userSelect:player.clubName !== "Vodka Volleys" && "none", filter:player.clubName !== "Vodka Volleys" && "blur(5px)" }}>
@@ -103,8 +104,8 @@ const Tables = () =>  {
                         <td>{player.clubName}</td>
                         <td className="text-center">{player.goals}
                           </td>
-                      </tr>}
-                      )}
+                      </tr>}):<tr><td colSpan={4}><div class="loader"></div></td></tr>
+                      }
                   </tbody>
                 </Table>
               </CardBody>

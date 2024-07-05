@@ -15,6 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+
 import React, { useState, useEffect } from 'react';
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -33,6 +34,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import "../assets/scss/black-dashboard-react/custom/loader.scss";
 
 // core components
 import {
@@ -302,7 +304,7 @@ function Dashboard(props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.isArray(teams) && teams.length !== 0 && teams.map((team, i)=>{
+                    {(Array.isArray(teams) && teams.length !== 0)? teams.map((team, i)=>{
                         return(
                           <tr style={{background:((i+1)<=2)?"rgba(0,148,0,1)":((i+1)<=8)?"#27293d":"rgba(148,0,0,1)"}}>
                             <td>{team.playerName}</td>
@@ -315,7 +317,7 @@ function Dashboard(props) {
                             <td>{team.bilans}</td>
                           </tr>
                         )
-                    })}
+                    }):<tr><td colSpan={8}><div class="loader"></div></td></tr>}
                   </tbody>
                 </Table>
               </CardBody>
